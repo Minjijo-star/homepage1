@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Pretendard", sans-serif;
+}
+
+/* 방금 넣었던 body와 .ppt-image는 지웁니다 */
+
+html {
+    scroll-snap-type: y mandatory;
+}
+
+section {
+    scroll-snap-align: start;
+}
+
+.page {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    
+    /* 반복되는 배경 설정을 여기에 한 번만 적어줍니다! */
+    background-size: 100%; /* 핵심! 전체가 다 보이게 쏙 맞춰줍니다 */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #000; /* PPT 주변 빈 공간을 검은색으로 채워 시네마틱한 느낌 주기 */
+}
+
+/* 이제 각 페이지는 이미지 주소만 딱 적어주면 끝납니다! */
+.s1 { background-image: url("../image/team1/슬라이드1.PNG"); }
+.s2 { background-image: url("../image/team1/슬라이드2.PNG"); }
+.s3 { background-image: url("../image/team1/슬라이드3.PNG"); }
+.s4 { background-image: url("../image/team1/슬라이드4.PNG"); }
+.s5 { background-image: url("../image/team1/슬라이드5.PNG"); }
+.s6 { background-image: url("../image/team1/슬라이드6.PNG"); }
+.s7 { background-image: url("../image/team1/슬라이드7.PNG"); }
+.s8 { background-image: url("../image/team1/슬라이드8.PNG"); }
+.s9 { background-image: url("../image/team1/슬라이드9.PNG"); }
+.s10 { background-image: url("../image/team1/슬라이드10.PNG"); }
+.s11 { background-image: url("../image/team1/슬라이드12.PNG"); }
+
+
+/* s11 페이지 안의 콘텐츠를 중앙 정렬합니다 */
+.page.s11 div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+/* team1.css 파일의 55번 줄 .folder-name 부분 수정 */
+.folder-name {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #000000;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 1400px;
+    
+    /* --- 여기서부터 버튼 모양을 만드는 코드입니다 --- */
+    background-color: #f7b2e3; /* 분홍색 배경 (원하는 색상 코드로 변경 가능) */
+    padding: 15px 40px; /* 위아래 15px, 좌우 40px 여백을 주어 버튼 크기 생성 */
+    border-radius: 15px; /* 모서리를 둥글게 만듭니다 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 버튼에 입체감을 주는 그림자 */
+    transition: all 0.2s ease; /* 마우스를 올렸을 때 부드러운 효과 */
+}
+
+/* 마우스 올렸을 때 살짝 눌리는 효과 (선택사항) */
+.folder-name:hover {
+    transform: scale(0.98); 
+    background-color: #f28ecc; /* 살짝 진해지는 분홍색 */
+}
