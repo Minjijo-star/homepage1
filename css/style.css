@@ -1,386 +1,295 @@
-* {margin: 0;
-padding: 0;
-box-sizing: border-box;
-font-family: "Pretendard", 
-sans-serif;
+/* 기본 설정 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Pretendard", sans-serif;
 }
 body {
-background: #000;
-color: #ff20a6;
+    background: #000;
+    color: #ffffff;
 }
 
+/* 네비게이션 (메뉴) */
 .navbar {
-position: fixed;
-width: 100%;
-top: 0;
-background: #000000;
-padding: 10px 0;
-border-bottom: none;
-color: #ff20a6 ; 
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: #000;
+    padding: 15px 0;
+    z-index: 999;
 }
-
 .container {
-max-width: 1100px;
-margin: auto;
-padding: 0 20px;
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 20px;
 }
-
 .nav-inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-
-.nav-inner a{
-    text-decoration: none;
-}
-
 .logo {
     font-weight: 700;
     font-size: 30px;
     color: #ff20a6;
 }
-
 .logo span {
-    color : #ff20a6;
+    color: #ff20a6;
 }
-
-.menu a{
-margin-left: 28px;
-text-decoration: none;
-color: #ff20a6;
-font-size: 20px;
-transition: 0.2s;
+.menu a {
+    margin-left: 28px;
+    text-decoration: none;
+    color: #ff20a6;
+    font-size: 20px;
+    transition: 0.2s;
 }
-
 .menu a:hover {
-    color: #4e4e4e;
+    color: #fff;
 }
 
+/* Hero (메인 대문) */
 .hero {
-    padding-top: 140PX;
-    padding-bottom: 100PX;
+    padding-top: 180px;
+    padding-bottom: 100px;
     text-align: center;
 }
-
-.hero-inner {
-    max-width: 1200px;
-}
-
 .badge {
-    display: inline-block ;
-    background: #000;
+    display: inline-block;
     color: #ff20a6;
-
     font-size: 30px;
-    margin-bottom: 100px;
-    margin-top: 210px;
+    margin-bottom: 30px;
 }
-
 h1 {
-    font-size: 60PX;
+    font-size: 60px;
     font-weight: 800;
     line-height: 1.3;
-    margin-bottom: 20PX;
-    margin-top: 50px;
+    margin-bottom: 20px;
     color: white;
 }
-
-h2 {
+h1 span {
     color: #ff20a6;
-    font-size: 40px;
 }
-
 .hero p {
     color: white;
     font-size: 20px;
+    margin-top: 30px;
     margin-bottom: 50px;
-    margin-top: 50px;
+    line-height: 1.6;
 }
-
 .btn {
     padding: 12px 24px;
     border-radius: 30px;
     text-decoration: none;
     display: inline-block;
     margin: 10px;
-    margin-bottom: 180px;
-    margin-top: 200px;
+    font-weight: bold;
 }
-
-.primary {
+.primary, .secondary {
     background: #ffacde;
     color: #000;
+    transition: 0.3s;
+}
+.primary:hover, .secondary:hover {
+    background: #fff;
+    transform: translateY(-3px);
 }
 
-.secondary {
-    background: #ffacde;
-    color: #000
-
-}
-
+/* About Me */
 .about {
     padding: 80px 0;
-}
-
-.about-grid {
-    display: grid;
-    gap: 10px;
-    margin-top: 300px;
-    margin-bottom: 300px;
     text-align: center;
 }
-
-.about img {
-    width: 70%;
-    border-radius: 20px;
+.about h2 {
+    color: #ff20a6;
+    font-size: 40px;
+    margin-bottom: 20px;
 }
-
-.about-grid-p{
-    color: #000;
+.about-grid-p {
+    color: #cccccc;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 60px;
 }
-
-
 .card-box {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 40px;
-    margin-top: 20px;
-    color: #000;
-    text-align: center;
+    gap: 20px;
 }
-
 .card {
-   background: #1a1a1a; /* 기존보다 살짝 부드러운 다크 그레이 */
-    border: 1px solid #333; /* 핑크 테두리 대신 아주 얇고 은은한 그레이 선 */
+    background: #1a1a1a;
     border-radius: 16px;
-    padding: 40px 30px; /* 안쪽 여백을 넉넉하게 */
-    display: flex;
-    flex-direction: column;
-    text-align: left; /* 중앙 정렬 -> 왼쪽 정렬로 변경 (가장 중요!) */
+    padding: 40px 30px;
+    text-align: left;
+    transition: 0.3s;
 }
-
 .card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(255, 32, 166, 0.3); /* 포인트 컬러(핑크) 그림자 효과 */
+    box-shadow: 0 10px 20px rgba(255, 32, 166, 0.2);
 }
-
 .card h4 {
-   color: #ffffff; /* 흰색으로 묵직하게 */
+    color: #ffffff;
     font-size: 25px;
-    margin-top: 0;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     padding-bottom: 15px;
-    border-bottom: 1px solid #333; /* 제목 아래 얇은 선으로 본문과 구분감 주기 */
+    border-bottom: 1px solid #333;
 }
-
-.card p{
-    margin: 0; /* 이전에 넣었던 위아래 중앙 정렬(auto) 제거 */
-    line-height: 1.6; /* 줄간격을 넓혀서 읽기 편하게 */
-    color: #cccccc; /* 본문은 살짝 연한 회색으로 힘 빼기 */
+.card p {
+    color: #cccccc;
     font-size: 16px;
-
+    line-height: 1.6;
 }
-
 .card p strong {
     display: block;
-    color: #ffacde; /* 여기서만 포인트 컬러(핑크) 딱 한 번 사용! */
+    color: #ffacde;
     font-size: 18px;
-    margin-top: 25px; /* 소제목 위 간격 띄우기 */
-    margin-bottom: 5px; /* 소제목과 아래 내용물 간격 좁히기 */
+    margin-top: 20px;
+    margin-bottom: 5px;
 }
 .card p strong:first-child {
     margin-top: 0;
 }
 
-/* portfolio */
+/* Portfolio */
 .portfolio {
-    padding: 80px 0;
-
+    padding: 100px 0;
 }
-
+.portfolio h2 {
+    color: #ff20a6;
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 50px;
+}
 .grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 30px; /* 기존 5px은 너무 답답해서 30px로 시원하게 띄웁니다 */
+    gap: 30px;
 }
-
+.portfolio-a {
+    text-decoration: none;
+}
 .portfolio-card {
     background: #1a1a1a;
     border-radius: 20px;
     overflow: hidden;
     transition: 0.3s;
-    padding-top: 30px;
+    padding-bottom: 20px;
 }
-
-
 .portfolio-card:hover {
-    transform: translateY(-10px); /* 기존 -50px은 화면 밖으로 날아갈 듯이 높아서 -10px로 안정감 있게 수정 */
-    box-shadow: 0 10px 20px rgba(255, 32, 166, 0.3); /* 포인트 컬러(핑크) 그림자 효과 */
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(255, 32, 166, 0.2);
 }
-
 .portfolio-card img {
-    width: 100%; /* 카드의 가로 크기에 무조건 꽉 차게 */
-    height: 250px; /* 이미지 높이를 250px로 통일 (원하시면 숫자를 바꿔보세요) */
-    object-fit: cover; /* 이미지가 찌그러지지 않고 비율을 유지하며 예쁘게 잘리도록 설정 */
-    display: block;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
 }
-
-.portfolio h2 {
-    margin-bottom: 70px; /* 숫자를 늘릴수록 간격이 더 넓어집니다 */
-}
-
-.portfolio h3 {
-    padding: 20px 10px 5px; /* 위쪽 여백을 줘서 이미지와 띄우기 */
-    text-align: center;
-    margin: 0;
+.portfolio-card h3 {
     color: #ffffff;
-    font-size: 20px;
-}
-
-.portfolio-a {
-    text-decoration: none;
-    color: #000;
-}
-
-.portfolio p {
-    padding: 5px 10px 25px; /* 아래쪽 여백을 줘서 답답하지 않게 */
+    font-size: 22px;
     text-align: center;
-    margin: 0;
-    color: #cccccc; /* 설명글은 살짝 진한 회색으로 힘 빼기 */
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.portfolio-card p {
+    color: #cccccc;
+    text-align: center;
+    font-size: 15px;
 }
 
-/* ai */
+/* AI & Creative */
 .ai {
     background: #111;
-    color: #ffffff;
     padding: 120px 0;
-    margin-top: 400px; /* 모니터 크기에 따라 200px~300px 정도로 자유롭게 조절해 보세요 */
-    margin-bottom: 400px;
 }
-
+.ai h2 {
+    color: #ff20a6;
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 60px;
+}
 .ai-card {
-    background: #222222;
-    padding: 40px 30px; /* 기존 20px에서 위아래 여백을 두 배로 늘려 시원하게 만듭니다 */
+    background: #222;
+    padding: 40px 30px;
     border-radius: 15px;
     text-align: center;
-    transition: all 0.3s ease; /* 마우스 올릴 때 부드러운 애니메이션 효과 준비 */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* 은은한 기본 그림자 */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    transition: 0.3s;
 }
-
 .ai-card:hover {
-    transform: translateY(-5px); /* 위로 살짝 떠오르는 느낌 */
-    box-shadow: 0 8px 20px rgba(255, 32, 166, 0.15); /* 핑크색 빛이 살짝 도는 그림자 */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(255, 32, 166, 0.15);
 }
-
-/* AI & Creative 제목과 아래 박스들 사이의 여백 */
-.ai h2 {
-    margin-bottom: 60px; /* 이 숫자를 80px, 100px 등으로 키우면 사이가 훨씬 넓어집니다! */
-}
-
-/* 카드 제목 디자인 */
 .ai-card h3 {
-    margin: 0 0 20px 0; /* 기존 15px에서 20px로 늘려서 간격을 시원하게 벌려줍니다 */
-    color: #ffacde; /* (지금 예쁘게 적용해 두신 핑크색 코드를 그대로 두시면 됩니다) */
+    color: #ffacde;
     font-size: 22px;
+    margin-bottom: 15px;
 }
-
-/* 카드 본문 디자인 */
 .ai-card p {
-    margin: 0;
-    color: #cccccc; /* 본문은 살짝 연한 회색으로 */
-    line-height: 1.6; /* 줄간격을 넓혀서 읽기 편하게 (글자가 잘리는 현상 방지) */
-    font-size: 15px;
-    word-break: keep-all; /* 단어 중간에 뚝 끊기며 줄바꿈 되는 것을 방지 (한글 텍스트에 필수!) */
+    color: #ccc;
+    line-height: 1.6;
+    word-break: keep-all;
 }
 
-.container h2 {
-    text-align: center;
-    padding-bottom: 30px;
-}
-
-.ai-card a {
-    text-decoration: none;
-    color: #ffffff;
-}
-
-/* contact */
+/* Contact */
 .contact {
-    background: #000;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
 }
-
-
-
-/* 2. 제목: 여기서 margin-top 숫자를 조절해서 위치를 잡으세요 */
+.contact-align-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .contact h2 {
     font-size: 55px;
     font-weight: 900;
     color: #ff20a6;
-    text-align: center;
-    /* 화면 위쪽에서 얼마나 내릴지 결정 (숫자가 커질수록 버튼과 가까워집니다) */
-    margin-top: 260px !important; 
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     letter-spacing: 2px;
 }
-
-/* 3. 연락처 텍스트 */
 .contact-align-center p {
     font-size: 20px;
     color: #ccc;
-    margin-bottom: 1px;
-    text-align: center;
+    margin-bottom: 8px;
 }
-
-/* 4. 버튼 뭉치 (텍스트와 가깝게 붙임) */
 .contact-buttons {
-    margin-top: -120px; /* 텍스트와 버튼 사이 간격 */
     display: flex;
-    gap: 30px;
-    justify-content: center;
+    gap: 15px;
+    margin-top: 35px;
 }
-
-
-/* 버튼 스타일 업그레이드 */
-.contact .btn.primary {
+.contact-buttons .btn {
     background: #ffacde;
     color: #000;
     padding: 12px 24px;
-    font-size: 15px;
     border-radius: 10px;
     text-decoration: none;
+    font-weight: bold;
     transition: 0.3s;
-    border: none;
-    white-space: nowrap; /* 글자가 한 줄로 나오게 고정 */
 }
-
-.contact .btn.primary:hover {
+.contact-buttons .btn:hover {
     background: #fff;
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(255, 32, 166, 0.4);
 }
 
-/* --- 모바일 반응형 (화면 너비 768px 이하일 때 적용) --- */
+/* ========================================= */
+/* 모바일 반응형 (화면 너비 768px 이하일 때 적용) */
+/* ========================================= */
 @media screen and (max-width: 768px) {
-    /* 1. 네비게이션 바 (가로 스크롤 적용) */
+    /* 네비게이션 가로 스와이프 */
     .nav-inner {
-        flex-direction: row; 
-        overflow-x: auto; 
-        white-space: nowrap; 
-        padding-bottom: 5px; 
+        flex-direction: row;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 5px;
     }
     .nav-inner::-webkit-scrollbar {
-        display: none; 
+        display: none;
     }
     .logo {
-        font-size: 20px; 
+        font-size: 20px;
         margin-right: 15px;
     }
     .menu {
@@ -389,82 +298,51 @@ h2 {
     }
     .menu a {
         font-size: 15px;
-        margin-left: 15px; 
+        margin-left: 15px;
     }
 
-    /* 2. 메인 텍스트 크기 조정 */
+    /* 메인 텍스트 */
     .hero {
-        padding-top: 150px; 
+        padding-top: 150px;
     }
     .badge {
         font-size: 16px;
-        margin-top: 0;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
     }
     h1 {
-        font-size: 32px; 
+        font-size: 32px;
     }
     .hero p {
-        font-size: 16px; 
-        word-break: keep-all; 
+        font-size: 16px;
+        margin-top: 20px;
+        margin-bottom: 40px;
     }
 
-    /* 3. About Me 카드 영역 (가로 스크롤 스와이프 적용) */
-    .about-grid {
-        margin-top: 100px;
-        margin-bottom: 100px;
-    }
+    /* About Me 가로 스와이프 */
     .card-box {
-        display: flex; 
-        flex-wrap: nowrap; 
-        overflow-x: auto; 
-        gap: 15px;
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
         padding-bottom: 10px;
+        gap: 15px;
     }
     .card-box::-webkit-scrollbar {
-        display: none; 
+        display: none;
     }
     .card {
-        min-width: 260px; 
+        min-width: 260px;
     }
 
-    /* 4. 포트폴리오 및 기타 영역 정리 */
+    /* 포트폴리오 1줄 배치 */
     .grid {
-        grid-template-columns: 1fr; 
-    }
-    .ai {
-        margin-top: 150px;
-        margin-bottom: 150px;
-        padding: 60px 0;
+        grid-template-columns: 1fr;
     }
 
-    /* 5. Contact 영역 정중앙 배치 및 오류 수정 */
-    .contact {
-        min-height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 0 20px;
+    /* Contact 모바일 중앙 정렬 유지 */
+    .contact h2 {
+        font-size: 40px;
     }
     .contact-align-center {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: -60px; 
-    }
-    .contact h2 {
-        margin-top: 0 !important; 
-        margin-bottom: 25px !important;
-        font-size: 40px !important;
-    }
-    .contact-align-center p {
-        margin-top: 0 !important;
-        margin-bottom: 8px !important; 
-    }
-    .contact-buttons {
-        display: flex !important;
-        flex-direction: row !important; 
-        margin-top: 35px !important; 
-        gap: 15px !important;
+        margin-top: -40px;
     }
 }
