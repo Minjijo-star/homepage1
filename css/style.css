@@ -438,12 +438,21 @@ h2 {
         margin-bottom: 150px;
         padding: 60px 0;
     }
+ /* ... (앞부분 코드 유지) ... */
+
     .contact h2 {
-        margin-top: 100px !important;
+        margin-top: 50px !important; /* 모바일 위쪽 여백 조정 */
         font-size: 40px;
     }
     .contact-buttons {
-        flex-direction: column;
-        gap: 15px;
+        flex-direction: row; /* 2번째 이미지처럼 다시 가로로 나란히 배치 */
+        margin-top: 30px; /* ★ 핵심: 기존 마이너스 마진을 정상으로 돌려 겹침 현상 해결 */
+        gap: 10px; /* 버튼 사이 간격 */
     }
+    /* 화면이 좁은 스마트폰에서도 버튼이 한 줄에 잘 들어가도록 크기 살짝 축소 */
+    .contact-buttons .btn {
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+}
 }
