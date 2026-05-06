@@ -371,17 +371,16 @@ h2 {
 @media screen and (max-width: 768px) {
     /* 1. 네비게이션 바 (가로 스크롤 적용) */
     .nav-inner {
-        flex-direction: row; /* 위아래가 아닌 다시 가로로 배치 */
-        overflow-x: auto; /* 화면 밖으로 넘어가면 가로 스크롤 생성 */
-        white-space: nowrap; /* 글자가 밑으로 떨어지지 않게 고정 */
+        flex-direction: row; 
+        overflow-x: auto; 
+        white-space: nowrap; 
         padding-bottom: 5px; 
     }
-    /* 모바일에서 보기 싫은 스크롤바 선 숨기기 */
     .nav-inner::-webkit-scrollbar {
         display: none; 
     }
     .logo {
-        font-size: 20px; /* 로고 크기 살짝 축소 */
+        font-size: 20px; 
         margin-right: 15px;
     }
     .menu {
@@ -390,7 +389,7 @@ h2 {
     }
     .menu a {
         font-size: 15px;
-        margin-left: 15px; /* 메뉴 사이 간격 좁히기 */
+        margin-left: 15px; 
     }
 
     /* 2. 메인 텍스트 크기 조정 */
@@ -416,38 +415,56 @@ h2 {
         margin-bottom: 100px;
     }
     .card-box {
-        display: flex; /* 기존 그리드[cite: 2]에서 플렉스로 변경 */
-        flex-wrap: nowrap; /* 카드가 밑으로 떨어지지 않게 고정 */
-        overflow-x: auto; /* 모바일에서 좌우로 스와이프 가능하게 설정 */
+        display: flex; 
+        flex-wrap: nowrap; 
+        overflow-x: auto; 
         gap: 15px;
         padding-bottom: 10px;
     }
     .card-box::-webkit-scrollbar {
-        display: none; /* 스크롤바 선 숨기기 */
+        display: none; 
     }
     .card {
-        min-width: 260px; /* 카드가 너무 좁게 찌그러지지 않도록 최소 너비 보장 */
+        min-width: 260px; 
     }
 
     /* 4. 포트폴리오 및 기타 영역 정리 */
     .grid {
-        grid-template-columns: 1fr; /* 포트폴리오 이미지는 1줄로 크게 보여주기 */
+        grid-template-columns: 1fr; 
     }
     .ai {
         margin-top: 150px;
         margin-bottom: 150px;
         padding: 60px 0;
     }
-    /* 4. 포트폴리오 및 기타 영역 정리 (이전 코드 아래에) */
+
+    /* 5. Contact 영역 정중앙 배치 및 오류 수정 */
+    .contact {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 20px;
+    }
+    .contact-align-center {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: -60px; 
+    }
     .contact h2 {
-        margin-top: 0px !important; /* 위쪽 여백 초기화 */
-        font-size: 40px;
+        margin-top: 0 !important; 
+        margin-bottom: 25px !important;
+        font-size: 40px !important;
+    }
+    .contact-align-center p {
+        margin-top: 0 !important;
+        margin-bottom: 8px !important; 
     }
     .contact-buttons {
         display: flex !important;
-        flex-direction: row !important; /* 무조건 가로로 배치 */
-        margin-top: 30px !important; /* 무조건 겹치지 않게 떨어뜨림 */
+        flex-direction: row !important; 
+        margin-top: 35px !important; 
         gap: 15px !important;
-    }
     }
 }
