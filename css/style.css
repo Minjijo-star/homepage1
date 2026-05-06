@@ -29,10 +29,14 @@ body {
     justify-content: space-between;
     align-items: center;
 }
+.nav-inner a {
+    text-decoration: none; /* 모든 메뉴 링크의 기본 밑줄 제거 */
+}
 .logo {
     font-weight: 700;
     font-size: 30px;
     color: #ff20a6;
+    text-decoration: none; /* 로고 밑줄 완벽 제거 */
 }
 .logo span {
     color: #ff20a6;
@@ -279,7 +283,7 @@ h1 span {
 /* 모바일 반응형 (화면 너비 768px 이하일 때 적용) */
 /* ========================================= */
 @media screen and (max-width: 768px) {
-    /* 1. 네비게이션 바 (위아래로 예쁘게 배치) */
+    /* 1. 네비게이션 바 */
     .nav-inner {
         flex-direction: column;
         gap: 15px;
@@ -287,6 +291,7 @@ h1 span {
     }
     .logo {
         font-size: 24px;
+        text-decoration: none; /* 모바일에서도 밑줄 확실히 제거 */
     }
     .menu {
         display: flex;
@@ -299,7 +304,7 @@ h1 span {
         margin-left: 0;
     }
 
-    /* 2. 메인 텍스트 (글자 잘림 해결 및 중앙 정렬) */
+    /* 2. 메인 텍스트 */
     .hero {
         padding-top: 180px;
     }
@@ -315,33 +320,40 @@ h1 span {
         margin-top: 20px;
         margin-bottom: 40px;
         padding: 0 10px;
-        word-break: keep-all; /* 한글 줄바꿈 예쁘게 */
+        word-break: keep-all; 
     }
 
-    /* 3. About Me & 카드 (2번째 이미지처럼 1줄로 세로 배치) */
+    /* 3. About Me & 카드 (★양옆 여백 추가!★) */
     .about h2 {
-        text-align: center; /* 제목 중앙 정렬 꼬인 것 복구 */
+        text-align: center; 
+    }
+    .about-grid-p {
+        padding: 0 25px; /* 긴 설명 텍스트 양옆 여백 */
+        word-break: keep-all;
     }
     .card-box {
         display: grid;
-        grid-template-columns: 1fr; /* 1칸씩 위에서 아래로 떨어지게! */
+        grid-template-columns: 1fr; 
         gap: 20px;
-        padding: 0 15px;
+        padding: 0 25px; /* 카드 박스 양옆 여백 */
     }
     .card {
         min-width: auto;
     }
 
-    /* 4. 포트폴리오 및 AI 영역 (1줄로 크게 배치) */
+    /* 4. 포트폴리오 및 AI 영역 (★양옆 여백 추가!★) */
     .grid {
         grid-template-columns: 1fr;
-        padding: 0 15px;
+        padding: 0 25px; /* 포트폴리오 박스 양옆 여백 */
     }
     .ai {
         padding: 80px 0;
     }
+    .ai-card {
+        margin: 0 25px; /* AI 박스 양옆 여백 */
+    }
 
-    /* 5. Contact 모바일 완벽 중앙 정렬 (유지) */
+    /* 5. Contact 모바일 완벽 중앙 정렬 */
     .contact {
         min-height: 100vh;
         display: flex;
