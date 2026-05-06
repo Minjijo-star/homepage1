@@ -369,61 +369,70 @@ h2 {
 
 /* --- 모바일 반응형 (화면 너비 768px 이하일 때 적용) --- */
 @media screen and (max-width: 768px) {
-    /* 1. 네비게이션 바 (메뉴) 수정 */
+    /* 1. 네비게이션 바 (가로 스크롤 적용) */
     .nav-inner {
-        flex-direction: column; /* 가로 배열을 세로 배열로 변경 */
-        gap: 15px; /* 로고와 메뉴 사이 간격 */
+        flex-direction: row; /* 위아래가 아닌 다시 가로로 배치 */
+        overflow-x: auto; /* 화면 밖으로 넘어가면 가로 스크롤 생성 */
+        white-space: nowrap; /* 글자가 밑으로 떨어지지 않게 고정 */
+        padding-bottom: 5px; 
+    }
+    /* 모바일에서 보기 싫은 스크롤바 선 숨기기 */
+    .nav-inner::-webkit-scrollbar {
+        display: none; 
     }
     .logo {
-        font-size: 24px; /* 로고 크기 모바일에 맞게 축소 */
+        font-size: 20px; /* 로고 크기 살짝 축소 */
+        margin-right: 15px;
     }
     .menu {
         display: flex;
-        flex-wrap: wrap; /* 자리가 부족하면 자연스럽게 줄바꿈 */
-        justify-content: center;
-        gap: 15px; /* 메뉴들 사이 간격 */
+        flex-wrap: nowrap;
     }
     .menu a {
-        margin-left: 0; /* 기존에 넓게 잡혀있던 마진 제거 */
-        font-size: 16px; /* 메뉴 글자 크기 축소 */
+        font-size: 15px;
+        margin-left: 15px; /* 메뉴 사이 간격 좁히기 */
     }
 
-    /* 2. 메인 영웅(Hero) 섹션 텍스트 크기 및 여백 수정 */
+    /* 2. 메인 텍스트 크기 조정 */
     .hero {
-        padding-top: 180px; /* 모바일에서 메뉴가 차지하는 공간 확보 */
+        padding-top: 150px; 
     }
     .badge {
-        font-size: 18px;
+        font-size: 16px;
         margin-top: 0;
         margin-bottom: 30px;
     }
     h1 {
-        font-size: 34px; /* 아주 큰 글씨 모바일 사이즈로 축소 */
-        margin-top: 10px;
+        font-size: 32px; 
     }
     .hero p {
         font-size: 16px; 
-        margin-top: 30px;
-        word-break: keep-all; /* 텍스트 깔끔하게 줄바꿈 */
-    }
-    .btn {
-        margin-top: 30px;
-        margin-bottom: 80px;
+        word-break: keep-all; 
     }
 
-    /* 3. 그리드(카드) 레이아웃 모바일에 맞게 1줄로 변경 */
+    /* 3. About Me 카드 영역 (가로 스크롤 스와이프 적용) */
     .about-grid {
         margin-top: 100px;
         margin-bottom: 100px;
     }
     .card-box {
-        grid-template-columns: 1fr; /* 기존 4칸 -> 모바일 1칸으로 변경 */
+        display: flex; /* 기존 그리드[cite: 2]에서 플렉스로 변경 */
+        flex-wrap: nowrap; /* 카드가 밑으로 떨어지지 않게 고정 */
+        overflow-x: auto; /* 모바일에서 좌우로 스와이프 가능하게 설정 */
+        gap: 15px;
+        padding-bottom: 10px;
     }
-    .grid {
-        grid-template-columns: 1fr; /* 기존 2칸 -> 모바일 1칸으로 변경 */
+    .card-box::-webkit-scrollbar {
+        display: none; /* 스크롤바 선 숨기기 */
+    }
+    .card {
+        min-width: 260px; /* 카드가 너무 좁게 찌그러지지 않도록 최소 너비 보장 */
     }
 
-    /* 4. 기타 여백 및 크기 조정 */
+    /* 4. 포트폴리오 및 기타 영역 정리 */
+    .grid {
+        grid-template-columns: 1fr; /* 포트폴리오 이미지는 1줄로 크게 보여주기 */
+    }
     .ai {
         margin-top: 150px;
         margin-bottom: 150px;
@@ -434,7 +443,7 @@ h2 {
         font-size: 40px;
     }
     .contact-buttons {
-        flex-direction: column; /* 모바일에서는 복사 버튼들을 위아래로 배치 */
+        flex-direction: column;
         gap: 15px;
     }
 }
