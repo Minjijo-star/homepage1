@@ -268,6 +268,7 @@ h1 span {
     text-decoration: none;
     font-weight: bold;
     transition: 0.3s;
+    white-space: nowrap;
 }
 .contact-buttons .btn:hover {
     background: #fff;
@@ -278,32 +279,29 @@ h1 span {
 /* 모바일 반응형 (화면 너비 768px 이하일 때 적용) */
 /* ========================================= */
 @media screen and (max-width: 768px) {
-    /* 네비게이션 가로 스와이프 */
+    /* 1. 네비게이션 바 (위아래로 예쁘게 배치) */
     .nav-inner {
-        flex-direction: row;
-        overflow-x: auto;
-        white-space: nowrap;
-        padding-bottom: 5px;
-    }
-    .nav-inner::-webkit-scrollbar {
-        display: none;
+        flex-direction: column;
+        gap: 15px;
+        padding-bottom: 10px;
     }
     .logo {
-        font-size: 20px;
-        margin-right: 15px;
+        font-size: 24px;
     }
     .menu {
         display: flex;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
     }
     .menu a {
         font-size: 15px;
-        margin-left: 15px;
+        margin-left: 0;
     }
 
-    /* 메인 텍스트 */
+    /* 2. 메인 텍스트 (글자 잘림 해결 및 중앙 정렬) */
     .hero {
-        padding-top: 150px;
+        padding-top: 180px;
     }
     .badge {
         font-size: 16px;
@@ -316,33 +314,63 @@ h1 span {
         font-size: 16px;
         margin-top: 20px;
         margin-bottom: 40px;
+        padding: 0 10px;
+        word-break: keep-all; /* 한글 줄바꿈 예쁘게 */
     }
 
-    /* About Me 가로 스와이프 */
-    .card-box {
-        display: flex;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        padding-bottom: 10px;
-        gap: 15px;
+    /* 3. About Me & 카드 (2번째 이미지처럼 1줄로 세로 배치) */
+    .about h2 {
+        text-align: center; /* 제목 중앙 정렬 꼬인 것 복구 */
     }
-    .card-box::-webkit-scrollbar {
-        display: none;
+    .card-box {
+        display: grid;
+        grid-template-columns: 1fr; /* 1칸씩 위에서 아래로 떨어지게! */
+        gap: 20px;
+        padding: 0 15px;
     }
     .card {
-        min-width: 260px;
+        min-width: auto;
     }
 
-    /* 포트폴리오 1줄 배치 */
+    /* 4. 포트폴리오 및 AI 영역 (1줄로 크게 배치) */
     .grid {
         grid-template-columns: 1fr;
+        padding: 0 15px;
+    }
+    .ai {
+        padding: 80px 0;
     }
 
-    /* Contact 모바일 중앙 정렬 유지 */
-    .contact h2 {
-        font-size: 40px;
+    /* 5. Contact 모바일 완벽 중앙 정렬 (유지) */
+    .contact {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 20px;
     }
     .contact-align-center {
-        margin-top: -40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: -60px;
+    }
+    .contact h2 {
+        margin-top: 0 !important;
+        margin-bottom: 25px !important;
+        font-size: 40px !important;
+        text-align: center;
+    }
+    .contact-align-center p {
+        margin-top: 0 !important;
+        margin-bottom: 8px !important;
+        font-size: 18px;
+        text-align: center;
+    }
+    .contact-buttons {
+        display: flex !important;
+        flex-direction: row !important;
+        margin-top: 35px !important;
+        gap: 15px !important;
     }
 }
