@@ -323,23 +323,33 @@ h1 span {
         word-break: keep-all; 
     }
 
-    /* 3. About Me & 카드 (★양옆 여백 추가!★) */
+   /* 3. About Me & 카드 (★겹친 여백 제거★) */
     .about h2 {
         text-align: center; 
     }
     .about-grid-p {
-        padding: 0 25px; /* 긴 설명 텍스트 양옆 여백 */
+        padding: 0; /* 기본 여백이 있으므로 0으로 초기화 */
         word-break: keep-all;
     }
     .card-box {
         display: grid;
         grid-template-columns: 1fr; 
         gap: 20px;
-        padding: 0 25px; /* 카드 박스 양옆 여백 */
+        padding: 0; /* 기본 여백이 있으므로 0으로 초기화 */
     }
     .card {
         min-width: auto;
     }
+
+    /* 4. 포트폴리오 및 AI 영역 (★겹친 여백 제거★) */
+    .grid {
+        grid-template-columns: 1fr;
+        padding: 0; /* 기본 여백이 있으므로 0으로 초기화 */
+    }
+    .ai {
+        padding: 80px 0;
+    }
+    /* (기존에 있던 .ai-card { margin: ... } 코드는 아예 지워주세요!) */
 
     /* 4. 포트폴리오 및 AI 영역 (★양옆 여백 추가!★) */
     .grid {
