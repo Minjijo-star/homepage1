@@ -293,20 +293,20 @@ h1 span {
     .hero { padding-top: 180px; }
     .badge { font-size: 16px; margin-bottom: 20px; }
     h1 { font-size: 32px; }
-    .hero p { font-size: 16px; margin-top: 20px; margin-bottom: 40px; padding: 0 15px; word-break: keep-all; }
+    .hero p { font-size: 16px; margin-top: 20px; margin-bottom: 40px; padding: 0 20px; word-break: keep-all; }
 
-    /* 3. About Me & 카드 (보기 좋은 15px 여백 추가!) */
+    /* 3. About Me & 카드 (화면 테두리에 딱 붙는 현상 해결!) */
     .about h2 { text-align: center; }
-    .about-grid-p { padding: 0 15px !important; word-break: keep-all; }
-    .card-box { display: grid; grid-template-columns: 1fr; gap: 20px; padding: 0 15px !important; }
+    .about-grid-p { padding: 0 20px !important; word-break: keep-all; }
+    .card-box { display: grid; grid-template-columns: 1fr; gap: 20px; padding: 0 20px !important; }
     .card { min-width: auto; }
 
-    /* 4. 포트폴리오 및 AI 영역 (보기 좋은 15px 여백 추가!) */
-    .grid { display: grid; grid-template-columns: 1fr; gap: 20px; padding: 0 15px !important; }
+    /* 4. 포트폴리오 및 AI 영역 (홀쭉하게 쪼그라드는 현상 완벽 해결!) */
+    .grid { display: grid; grid-template-columns: 1fr; gap: 20px; padding: 0 20px !important; }
     .ai { padding: 80px 0; }
-    .ai-card { margin: 0 !important; } /* 홀쭉해지는 현상 완벽 방지 */
+    .ai-card { margin: 0 !important; width: 100%; } /* 너비를 꽉 채우고 불필요한 마진 강제 제거 */
 
-    /* 5. Contact 모바일 완벽 중앙 정렬 (오류 100% 해결) */
+    /* 5. Contact 모바일 완벽 중앙 정렬 */
     .contact { min-height: 100vh; display: flex; justify-content: center; align-items: center; padding: 0 20px; }
     .contact-align-center { display: flex; flex-direction: column; align-items: center; margin-top: -60px; width: 100%; }
     .contact h2 { margin-top: 0 !important; margin-bottom: 25px !important; font-size: 40px !important; text-align: center; }
